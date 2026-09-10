@@ -1,0 +1,84 @@
+version: 2
+
+semantic_models:
+  - name: fct_vaccine_enriched
+    description: "Fact table containing pharmacy vaccine appointments, survey feedback, and Cortex AI root-cause classifications."
+    
+    # Points to the physical table built in Step 3
+    model: ref('fct_vaccine_enriched')
+
+    # Primary and Foreign Keys
+    entities:
+      - name: appointment_id
+        type: primary
+        expr: APPOINTMENT_ID
+      - name: patient_id
+        type: foreign
+        expr: PATIENT_ID
+      - name: store_id
+        type: foreign
+        expr: STORE_ID
+
+    # Categorical Attributes for Grouping and Filtering
+    dimensions:
+      - name: appointment_date
+        type: time
+        type_params:
+          time_granularity: day
+        expr: APPOINTMENT_DATE
+        synonyms: ["date", "appointment day", "scheduled date"]
+
+      - name: channel
+        type: categorical
+        expr: CHANNEL
+        synonyms: ["booking channel", "location type", "delivery channel"]
+
+      - name: status
+        type: categorical
+        expr: STATUS
+        synonyms: ["appointment status", "attendance status", "outcome"]
+
+      - name: is_noshow
+        type: categorical
+        expr: IS_NOSHOW
+        synonyms: ["no show", "missed appointment", "did not show up"]
+
+      - name: root_cause_category
+        type: categorical
+        expr: ROOT_CAUSE_CATEGORY
+        synonyms: ["missed reason", "cancellation cause", "why missed", "root cause", "primary reason"]
+
+      - name: reminder_sent
+        type: categorical
+        expr: REMINDER_SENT
+        synonyms: ["received reminder", "notification sent", "reminder status"]
+
+    # Aggregations over numeric fields or conditional logic
+    measures:
+      - name: total_appointments
+        description: "Total count of all scheduled vaccine appointments."
+        agg: count
+        expr: APPOINTMENT_ID
+        synonyms: ["appointment count", "total scheduled", "volume"]
+
+      - name: total_noshows
+        description: "Count of appointments where status was NO-SHOW."
+        agg: sum
+        expr: CASE WHEN IS_NOSHOW = TRUE THEN 1 ELSE 0 END
+        synonyms: ["missed count", "total no shows", "number of missed appointments"]
+
+      - name: avg_sentiment_score
+        description: "Average sentiment score computed by Snowflake Cortex AI."
+        agg: average
+        expr: FEEDBACK_SENTIMENT_SCORE
+        synonyms: ["average sentiment", "customer feel", "satisfaction score"]
+
+# Business Metrics Layer calculated from Measures
+metrics:
+  - name: noshow_rate
+    description: "Percentage of scheduled appointments resulting in a no-show."
+    type: derived
+    label: "No-Show Rate (%)"
+    type_params:
+      expr: "total_noshows / NULLIF(total_appointments, 0)"
+    synonyms: ["missed rate", "cancellation rate", "no show percentage", "spoilage risk rate"]
