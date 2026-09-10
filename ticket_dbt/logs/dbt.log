@@ -1,0 +1,720 @@
+[0m14:31:58.255287 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000225D8C91E80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000225D655CB90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000225DB6379D0>]}
+
+
+============================== 14:31:58.259605 | 51ad6a0d-d381-494a-8a92-6b961f4b094f ==============================
+[0m14:31:58.259605 [info ] [MainThread]: Running with dbt=1.12.2
+[0m14:31:58.260269 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'maximum_seed_size_mib': '1', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'static_parser': 'True', 'printer_width': '80', 'write_json': 'True', 'empty': 'False', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\neera\\.dbt', 'invocation_command': 'dbt run', 'hints_enabled': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'indirect_selection': 'eager', 'log_path': 'C:\\Users\\neera\\support_ticket_pipeline\\ticket_dbt\\logs'}
+[0m14:31:58.479267 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '51ad6a0d-d381-494a-8a92-6b961f4b094f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000225DB5AFCE0>]}
+[0m14:31:58.516422 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '51ad6a0d-d381-494a-8a92-6b961f4b094f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000225D98889E0>]}
+[0m14:31:58.519642 [info ] [MainThread]: Registered adapter: duckdb=1.11.0
+[0m14:31:58.668070 [debug] [MainThread]: checksum: dd9aa61aee54b22913ff250ff4e3f85772456e86671b597be3e7a6d61468f7b2, vars: {}, profile: ticket_dbt, target: dev, version: 1.12.2
+[0m14:31:58.668739 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m14:31:58.669390 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '51ad6a0d-d381-494a-8a92-6b961f4b094f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000225DBB46750>]}
+[0m14:31:59.440361 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '51ad6a0d-d381-494a-8a92-6b961f4b094f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000225DD2F5F40>]}
+[0m14:31:59.492049 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\neera\support_ticket_pipeline\ticket_dbt\target\manifest.json
+[0m14:31:59.496031 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\neera\support_ticket_pipeline\ticket_dbt\target\semantic_manifest.json
+[0m14:31:59.514808 [debug] [MainThread]: Wrote artifact OsiDocument to C:\Users\neera\support_ticket_pipeline\ticket_dbt\target\osi_document.json
+[0m14:31:59.529784 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '51ad6a0d-d381-494a-8a92-6b961f4b094f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000225DC1974D0>]}
+[0m14:31:59.530165 [info ] [MainThread]: Found 4 models, 4 data tests, 500 macros
+[0m14:31:59.530774 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '51ad6a0d-d381-494a-8a92-6b961f4b094f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000225DD4C4AE0>]}
+[0m14:31:59.532403 [info ] [MainThread]: 
+[0m14:31:59.532710 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m14:31:59.532921 [info ] [MainThread]: 
+[0m14:31:59.533260 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m14:31:59.536319 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_ticket_analytics'
+[0m14:31:59.580895 [debug] [ThreadPool]: Using duckdb connection "list_ticket_analytics"
+[0m14:31:59.581249 [debug] [ThreadPool]: On list_ticket_analytics: /* {"app": "dbt", "dbt_version": "1.12.2", "profile_name": "ticket_dbt", "target_name": "dev", "connection_name": "list_ticket_analytics"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"ticket_analytics"'
+    
+  
+  
+[0m14:31:59.581395 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m14:31:59.604751 [debug] [ThreadPool]: SQL status: OK in 0.023 seconds
+[0m14:31:59.606216 [debug] [ThreadPool]: On list_ticket_analytics: Close
+[0m14:31:59.606766 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_ticket_analytics, now create_ticket_analytics_main)
+[0m14:31:59.607042 [debug] [ThreadPool]: Creating schema "database: "ticket_analytics"
+schema: "main"
+"
+[0m14:31:59.611316 [debug] [ThreadPool]: Using duckdb connection "create_ticket_analytics_main"
+[0m14:31:59.611507 [debug] [ThreadPool]: On create_ticket_analytics_main: /* {"app": "dbt", "dbt_version": "1.12.2", "profile_name": "ticket_dbt", "target_name": "dev", "connection_name": "create_ticket_analytics_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='ticket_analytics'
+        and type != 'duckdb'
+    
+  
+[0m14:31:59.611640 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m14:31:59.613171 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m14:31:59.613894 [debug] [ThreadPool]: Using duckdb connection "create_ticket_analytics_main"
+[0m14:31:59.614047 [debug] [ThreadPool]: On create_ticket_analytics_main: BEGIN
+[0m14:31:59.614313 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m14:31:59.614445 [debug] [ThreadPool]: Using duckdb connection "create_ticket_analytics_main"
+[0m14:31:59.614553 [debug] [ThreadPool]: On create_ticket_analytics_main: /* {"app": "dbt", "dbt_version": "1.12.2", "profile_name": "ticket_dbt", "target_name": "dev", "connection_name": "create_ticket_analytics_main"} */
+
+    
+    
+        create schema if not exists "ticket_analytics"."main"
+    
+[0m14:31:59.615324 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m14:31:59.615727 [debug] [ThreadPool]: On create_ticket_analytics_main: COMMIT
+[0m14:31:59.615860 [debug] [ThreadPool]: Using duckdb connection "create_ticket_analytics_main"
+[0m14:31:59.615970 [debug] [ThreadPool]: On create_ticket_analytics_main: COMMIT
+[0m14:31:59.616190 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m14:31:59.616334 [debug] [ThreadPool]: On create_ticket_analytics_main: Close
+[0m14:31:59.617360 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_ticket_analytics_main'
+[0m14:31:59.620111 [debug] [ThreadPool]: Using duckdb connection "list_ticket_analytics_main"
+[0m14:31:59.620303 [debug] [ThreadPool]: On list_ticket_analytics_main: BEGIN
+[0m14:31:59.620422 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m14:31:59.620757 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m14:31:59.620914 [debug] [ThreadPool]: Using duckdb connection "list_ticket_analytics_main"
+[0m14:31:59.621032 [debug] [ThreadPool]: On list_ticket_analytics_main: /* {"app": "dbt", "dbt_version": "1.12.2", "profile_name": "ticket_dbt", "target_name": "dev", "connection_name": "list_ticket_analytics_main"} */
+select
+      'ticket_analytics' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'ticket_analytics'
+  
+[0m14:31:59.625585 [debug] [ThreadPool]: SQL status: OK in 0.004 seconds
+[0m14:31:59.626369 [debug] [ThreadPool]: On list_ticket_analytics_main: ROLLBACK
+[0m14:31:59.626666 [debug] [ThreadPool]: On list_ticket_analytics_main: Close
+[0m14:31:59.627187 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '51ad6a0d-d381-494a-8a92-6b961f4b094f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000225DD535F10>]}
+[0m14:31:59.627482 [debug] [MainThread]: Using duckdb connection "master"
+[0m14:31:59.627609 [debug] [MainThread]: On master: BEGIN
+[0m14:31:59.627716 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m14:31:59.628004 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m14:31:59.628150 [debug] [MainThread]: On master: COMMIT
+[0m14:31:59.628259 [debug] [MainThread]: Using duckdb connection "master"
+[0m14:31:59.628359 [debug] [MainThread]: On master: COMMIT
+[0m14:31:59.628553 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m14:31:59.628696 [debug] [MainThread]: On master: Close
+[0m14:31:59.634281 [debug] [Thread-1 (]: Began running node model.ticket_dbt.my_first_dbt_model
+[0m14:31:59.634541 [debug] [Thread-2 (]: Began running node model.ticket_dbt.stg_support_tickets
+[0m14:31:59.634853 [info ] [Thread-1 (]: 1 of 4 START sql table model main.my_first_dbt_model ........................... [RUN]
+[0m14:31:59.635509 [debug] [Thread-1 (]: Acquiring new duckdb connection 'model.ticket_dbt.my_first_dbt_model'
+[0m14:31:59.635692 [debug] [Thread-1 (]: Began compiling node model.ticket_dbt.my_first_dbt_model
+[0m14:31:59.640368 [debug] [Thread-1 (]: Writing injected SQL for node "model.ticket_dbt.my_first_dbt_model"
+[0m14:31:59.635102 [info ] [Thread-2 (]: 2 of 4 START sql view model main.stg_support_tickets ........................... [RUN]
+[0m14:31:59.640891 [debug] [Thread-2 (]: Acquiring new duckdb connection 'model.ticket_dbt.stg_support_tickets'
+[0m14:31:59.641109 [debug] [Thread-2 (]: Began compiling node model.ticket_dbt.stg_support_tickets
+[0m14:31:59.641622 [debug] [Thread-2 (]: Writing injected SQL for node "model.ticket_dbt.stg_support_tickets"
+[0m14:31:59.643913 [debug] [Thread-2 (]: Began executing node model.ticket_dbt.stg_support_tickets
+[0m14:31:59.661100 [debug] [Thread-2 (]: Writing runtime sql for node "model.ticket_dbt.stg_support_tickets"
+[0m14:31:59.661492 [debug] [Thread-1 (]: Began executing node model.ticket_dbt.my_first_dbt_model
+[0m14:31:59.682735 [debug] [Thread-1 (]: Writing runtime sql for node "model.ticket_dbt.my_first_dbt_model"
+[0m14:31:59.684605 [debug] [Thread-2 (]: Using duckdb connection "model.ticket_dbt.stg_support_tickets"
+[0m14:31:59.684962 [debug] [Thread-2 (]: On model.ticket_dbt.stg_support_tickets: BEGIN
+[0m14:31:59.685260 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m14:31:59.686043 [debug] [Thread-1 (]: Using duckdb connection "model.ticket_dbt.my_first_dbt_model"
+[0m14:31:59.686269 [debug] [Thread-1 (]: On model.ticket_dbt.my_first_dbt_model: BEGIN
+[0m14:31:59.686694 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m14:31:59.686481 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m14:31:59.686981 [debug] [Thread-2 (]: Using duckdb connection "model.ticket_dbt.stg_support_tickets"
+[0m14:31:59.687160 [debug] [Thread-2 (]: On model.ticket_dbt.stg_support_tickets: /* {"app": "dbt", "dbt_version": "1.12.2", "profile_name": "ticket_dbt", "target_name": "dev", "node_id": "model.ticket_dbt.stg_support_tickets"} */
+
+  
+  create view "ticket_analytics"."main"."stg_support_tickets__dbt_tmp" as (
+    WITH raw_data AS (
+    SELECT * FROM read_csv_auto('../raw_support_tickets.csv')
+)
+SELECT 
+    ticket_id,
+    customer_id,
+    account_tier,
+    CAST(created_at AS TIMESTAMP) AS created_at,
+    CAST(resolved_at AS TIMESTAMP) AS resolved_at,
+    ticket_subject,
+    customer_feedback
+FROM raw_data
+  );
+
+[0m14:31:59.687337 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m14:31:59.687714 [debug] [Thread-1 (]: Using duckdb connection "model.ticket_dbt.my_first_dbt_model"
+[0m14:31:59.687922 [debug] [Thread-1 (]: On model.ticket_dbt.my_first_dbt_model: /* {"app": "dbt", "dbt_version": "1.12.2", "profile_name": "ticket_dbt", "target_name": "dev", "node_id": "model.ticket_dbt.my_first_dbt_model"} */
+
+    
+
+    create  table
+      "ticket_analytics"."main"."my_first_dbt_model__dbt_tmp"
+  
+    
+    as (
+      /*
+    Welcome to your first dbt model!
+    Did you know that you can also configure models directly within SQL files?
+    This will override configurations stated in dbt_project.yml
+
+    Try changing "table" to "view" below
+*/
+
+
+
+with source_data as (
+
+    select 1 as id
+    union all
+    select null as id
+
+)
+
+select *
+from source_data
+
+/*
+    Uncomment the line below to remove records with null `id` values
+*/
+
+-- where id is not null
+    );
+    
+  
+[0m14:31:59.692414 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m14:31:59.696126 [debug] [Thread-1 (]: Using duckdb connection "model.ticket_dbt.my_first_dbt_model"
+[0m14:31:59.696332 [debug] [Thread-1 (]: On model.ticket_dbt.my_first_dbt_model: /* {"app": "dbt", "dbt_version": "1.12.2", "profile_name": "ticket_dbt", "target_name": "dev", "node_id": "model.ticket_dbt.my_first_dbt_model"} */
+alter table "ticket_analytics"."main"."my_first_dbt_model__dbt_tmp" rename to "my_first_dbt_model"
+[0m14:31:59.696808 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m14:31:59.705012 [debug] [Thread-1 (]: On model.ticket_dbt.my_first_dbt_model: COMMIT
+[0m14:31:59.705551 [debug] [Thread-1 (]: Using duckdb connection "model.ticket_dbt.my_first_dbt_model"
+[0m14:31:59.705724 [debug] [Thread-1 (]: On model.ticket_dbt.my_first_dbt_model: COMMIT
+[0m14:31:59.705317 [debug] [Thread-2 (]: SQL status: OK in 0.018 seconds
+[0m14:31:59.707084 [debug] [Thread-2 (]: Using duckdb connection "model.ticket_dbt.stg_support_tickets"
+[0m14:31:59.707269 [debug] [Thread-2 (]: On model.ticket_dbt.stg_support_tickets: /* {"app": "dbt", "dbt_version": "1.12.2", "profile_name": "ticket_dbt", "target_name": "dev", "node_id": "model.ticket_dbt.stg_support_tickets"} */
+alter view "ticket_analytics"."main"."stg_support_tickets__dbt_tmp" rename to "stg_support_tickets"
+[0m14:31:59.707707 [debug] [Thread-2 (]: SQL status: OK in 0.000 seconds
+[0m14:31:59.708427 [debug] [Thread-2 (]: On model.ticket_dbt.stg_support_tickets: COMMIT
+[0m14:31:59.708621 [debug] [Thread-2 (]: Using duckdb connection "model.ticket_dbt.stg_support_tickets"
+[0m14:31:59.708760 [debug] [Thread-2 (]: On model.ticket_dbt.stg_support_tickets: COMMIT
+[0m14:31:59.709638 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m14:31:59.712514 [debug] [Thread-1 (]: Using duckdb connection "model.ticket_dbt.my_first_dbt_model"
+[0m14:31:59.712724 [debug] [Thread-1 (]: On model.ticket_dbt.my_first_dbt_model: /* {"app": "dbt", "dbt_version": "1.12.2", "profile_name": "ticket_dbt", "target_name": "dev", "node_id": "model.ticket_dbt.my_first_dbt_model"} */
+
+      drop table if exists "ticket_analytics"."main"."my_first_dbt_model__dbt_backup" cascade
+    
+[0m14:31:59.713086 [debug] [Thread-2 (]: SQL status: OK in 0.004 seconds
+[0m14:31:59.713985 [debug] [Thread-2 (]: Using duckdb connection "model.ticket_dbt.stg_support_tickets"
+[0m14:31:59.714150 [debug] [Thread-2 (]: On model.ticket_dbt.stg_support_tickets: /* {"app": "dbt", "dbt_version": "1.12.2", "profile_name": "ticket_dbt", "target_name": "dev", "node_id": "model.ticket_dbt.stg_support_tickets"} */
+
+      drop view if exists "ticket_analytics"."main"."stg_support_tickets__dbt_backup" cascade
+    
+[0m14:31:59.714319 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m14:31:59.715751 [debug] [Thread-1 (]: On model.ticket_dbt.my_first_dbt_model: Close
+[0m14:31:59.715971 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m14:31:59.717251 [debug] [Thread-2 (]: On model.ticket_dbt.stg_support_tickets: Close
+[0m14:31:59.718630 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '51ad6a0d-d381-494a-8a92-6b961f4b094f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000225DD954470>]}
+[0m14:31:59.718869 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '51ad6a0d-d381-494a-8a92-6b961f4b094f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000225DD840A50>]}
+[0m14:31:59.719295 [info ] [Thread-1 (]: 1 of 4 OK created sql table model main.my_first_dbt_model ...................... [[32mOK[0m in 0.08s]
+[0m14:31:59.720146 [debug] [Thread-1 (]: Finished running node model.ticket_dbt.my_first_dbt_model
+[0m14:31:59.719643 [info ] [Thread-2 (]: 2 of 4 OK created sql view model main.stg_support_tickets ...................... [[32mOK[0m in 0.08s]
+[0m14:31:59.720701 [debug] [Thread-2 (]: Finished running node model.ticket_dbt.stg_support_tickets
+[0m14:31:59.720985 [debug] [Thread-3 (]: Began running node model.ticket_dbt.my_second_dbt_model
+[0m14:31:59.721539 [debug] [Thread-4 (]: Began running node model.ticket_dbt.fct_ticket_performance
+[0m14:31:59.721326 [info ] [Thread-3 (]: 3 of 4 START sql view model main.my_second_dbt_model ........................... [RUN]
+[0m14:31:59.722245 [debug] [Thread-3 (]: Acquiring new duckdb connection 'model.ticket_dbt.my_second_dbt_model'
+[0m14:31:59.722420 [debug] [Thread-3 (]: Began compiling node model.ticket_dbt.my_second_dbt_model
+[0m14:31:59.723655 [debug] [Thread-3 (]: Writing injected SQL for node "model.ticket_dbt.my_second_dbt_model"
+[0m14:31:59.721887 [info ] [Thread-4 (]: 4 of 4 START sql view model main.fct_ticket_performance ........................ [RUN]
+[0m14:31:59.724004 [debug] [Thread-4 (]: Acquiring new duckdb connection 'model.ticket_dbt.fct_ticket_performance'
+[0m14:31:59.724225 [debug] [Thread-4 (]: Began compiling node model.ticket_dbt.fct_ticket_performance
+[0m14:31:59.726405 [debug] [Thread-4 (]: Writing injected SQL for node "model.ticket_dbt.fct_ticket_performance"
+[0m14:31:59.726795 [debug] [Thread-3 (]: Began executing node model.ticket_dbt.my_second_dbt_model
+[0m14:31:59.728168 [debug] [Thread-3 (]: Writing runtime sql for node "model.ticket_dbt.my_second_dbt_model"
+[0m14:31:59.728499 [debug] [Thread-4 (]: Began executing node model.ticket_dbt.fct_ticket_performance
+[0m14:31:59.729713 [debug] [Thread-4 (]: Writing runtime sql for node "model.ticket_dbt.fct_ticket_performance"
+[0m14:31:59.730059 [debug] [Thread-3 (]: Using duckdb connection "model.ticket_dbt.my_second_dbt_model"
+[0m14:31:59.730416 [debug] [Thread-3 (]: On model.ticket_dbt.my_second_dbt_model: BEGIN
+[0m14:31:59.730830 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m14:31:59.731392 [debug] [Thread-4 (]: Using duckdb connection "model.ticket_dbt.fct_ticket_performance"
+[0m14:31:59.731582 [debug] [Thread-4 (]: On model.ticket_dbt.fct_ticket_performance: BEGIN
+[0m14:31:59.731916 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m14:31:59.731754 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m14:31:59.732141 [debug] [Thread-3 (]: Using duckdb connection "model.ticket_dbt.my_second_dbt_model"
+[0m14:31:59.732289 [debug] [Thread-3 (]: On model.ticket_dbt.my_second_dbt_model: /* {"app": "dbt", "dbt_version": "1.12.2", "profile_name": "ticket_dbt", "target_name": "dev", "node_id": "model.ticket_dbt.my_second_dbt_model"} */
+
+  
+  create view "ticket_analytics"."main"."my_second_dbt_model__dbt_tmp" as (
+    -- Use the `ref` function to select from other models
+
+select *
+from "ticket_analytics"."main"."my_first_dbt_model"
+where id = 1
+  );
+
+[0m14:31:59.732444 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m14:31:59.732693 [debug] [Thread-4 (]: Using duckdb connection "model.ticket_dbt.fct_ticket_performance"
+[0m14:31:59.732835 [debug] [Thread-4 (]: On model.ticket_dbt.fct_ticket_performance: /* {"app": "dbt", "dbt_version": "1.12.2", "profile_name": "ticket_dbt", "target_name": "dev", "node_id": "model.ticket_dbt.fct_ticket_performance"} */
+
+  
+  create view "ticket_analytics"."main"."fct_ticket_performance__dbt_tmp" as (
+    WITH staging AS (
+    SELECT * FROM "ticket_analytics"."main"."stg_support_tickets"
+)
+SELECT 
+    ticket_id,
+    customer_id,
+    account_tier,
+    created_at,
+    resolved_at,
+    date_diff('hour', created_at, resolved_at) AS resolution_time_hours,
+    CASE 
+        WHEN date_diff('hour', created_at, resolved_at) > 24 THEN TRUE 
+        ELSE FALSE 
+    END AS is_sla_breached,
+    ticket_subject,
+    customer_feedback
+FROM staging
+  );
+
+[0m14:31:59.733122 [debug] [Thread-3 (]: SQL status: OK in 0.000 seconds
+[0m14:31:59.734256 [debug] [Thread-3 (]: Using duckdb connection "model.ticket_dbt.my_second_dbt_model"
+[0m14:31:59.734465 [debug] [Thread-3 (]: On model.ticket_dbt.my_second_dbt_model: /* {"app": "dbt", "dbt_version": "1.12.2", "profile_name": "ticket_dbt", "target_name": "dev", "node_id": "model.ticket_dbt.my_second_dbt_model"} */
+alter view "ticket_analytics"."main"."my_second_dbt_model__dbt_tmp" rename to "my_second_dbt_model"
+[0m14:31:59.734862 [debug] [Thread-3 (]: SQL status: OK in 0.000 seconds
+[0m14:31:59.735515 [debug] [Thread-3 (]: On model.ticket_dbt.my_second_dbt_model: COMMIT
+[0m14:31:59.735670 [debug] [Thread-3 (]: Using duckdb connection "model.ticket_dbt.my_second_dbt_model"
+[0m14:31:59.735799 [debug] [Thread-3 (]: On model.ticket_dbt.my_second_dbt_model: COMMIT
+[0m14:31:59.737184 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m14:31:59.737975 [debug] [Thread-3 (]: Using duckdb connection "model.ticket_dbt.my_second_dbt_model"
+[0m14:31:59.738130 [debug] [Thread-3 (]: On model.ticket_dbt.my_second_dbt_model: /* {"app": "dbt", "dbt_version": "1.12.2", "profile_name": "ticket_dbt", "target_name": "dev", "node_id": "model.ticket_dbt.my_second_dbt_model"} */
+
+      drop view if exists "ticket_analytics"."main"."my_second_dbt_model__dbt_backup" cascade
+    
+[0m14:31:59.738513 [debug] [Thread-3 (]: SQL status: OK in 0.000 seconds
+[0m14:31:59.739590 [debug] [Thread-3 (]: On model.ticket_dbt.my_second_dbt_model: Close
+[0m14:31:59.739782 [debug] [Thread-4 (]: SQL status: OK in 0.007 seconds
+[0m14:31:59.741183 [debug] [Thread-4 (]: Using duckdb connection "model.ticket_dbt.fct_ticket_performance"
+[0m14:31:59.740176 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '51ad6a0d-d381-494a-8a92-6b961f4b094f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000225DD7F5B50>]}
+[0m14:31:59.741368 [debug] [Thread-4 (]: On model.ticket_dbt.fct_ticket_performance: /* {"app": "dbt", "dbt_version": "1.12.2", "profile_name": "ticket_dbt", "target_name": "dev", "node_id": "model.ticket_dbt.fct_ticket_performance"} */
+alter view "ticket_analytics"."main"."fct_ticket_performance__dbt_tmp" rename to "fct_ticket_performance"
+[0m14:31:59.741734 [info ] [Thread-3 (]: 3 of 4 OK created sql view model main.my_second_dbt_model ...................... [[32mOK[0m in 0.02s]
+[0m14:31:59.742443 [debug] [Thread-3 (]: Finished running node model.ticket_dbt.my_second_dbt_model
+[0m14:31:59.742642 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m14:31:59.743508 [debug] [Thread-4 (]: On model.ticket_dbt.fct_ticket_performance: COMMIT
+[0m14:31:59.743695 [debug] [Thread-4 (]: Using duckdb connection "model.ticket_dbt.fct_ticket_performance"
+[0m14:31:59.743831 [debug] [Thread-4 (]: On model.ticket_dbt.fct_ticket_performance: COMMIT
+[0m14:31:59.744909 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m14:31:59.745713 [debug] [Thread-4 (]: Using duckdb connection "model.ticket_dbt.fct_ticket_performance"
+[0m14:31:59.745875 [debug] [Thread-4 (]: On model.ticket_dbt.fct_ticket_performance: /* {"app": "dbt", "dbt_version": "1.12.2", "profile_name": "ticket_dbt", "target_name": "dev", "node_id": "model.ticket_dbt.fct_ticket_performance"} */
+
+      drop view if exists "ticket_analytics"."main"."fct_ticket_performance__dbt_backup" cascade
+    
+[0m14:31:59.746192 [debug] [Thread-4 (]: SQL status: OK in 0.000 seconds
+[0m14:31:59.746864 [debug] [Thread-4 (]: On model.ticket_dbt.fct_ticket_performance: Close
+[0m14:31:59.747175 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '51ad6a0d-d381-494a-8a92-6b961f4b094f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000225DD50BBD0>]}
+[0m14:31:59.747504 [info ] [Thread-4 (]: 4 of 4 OK created sql view model main.fct_ticket_performance ................... [[32mOK[0m in 0.02s]
+[0m14:31:59.747899 [debug] [Thread-4 (]: Finished running node model.ticket_dbt.fct_ticket_performance
+[0m14:31:59.748983 [debug] [MainThread]: Using duckdb connection "master"
+[0m14:31:59.749149 [debug] [MainThread]: On master: BEGIN
+[0m14:31:59.749266 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m14:31:59.749567 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m14:31:59.749706 [debug] [MainThread]: On master: COMMIT
+[0m14:31:59.749815 [debug] [MainThread]: Using duckdb connection "master"
+[0m14:31:59.749915 [debug] [MainThread]: On master: COMMIT
+[0m14:31:59.750110 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m14:31:59.750242 [debug] [MainThread]: On master: Close
+[0m14:31:59.750416 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m14:31:59.750536 [debug] [MainThread]: Connection 'create_ticket_analytics_main' was properly closed.
+[0m14:31:59.750630 [debug] [MainThread]: Connection 'list_ticket_analytics_main' was properly closed.
+[0m14:31:59.750717 [debug] [MainThread]: Connection 'model.ticket_dbt.my_first_dbt_model' was properly closed.
+[0m14:31:59.750804 [debug] [MainThread]: Connection 'model.ticket_dbt.stg_support_tickets' was properly closed.
+[0m14:31:59.750890 [debug] [MainThread]: Connection 'model.ticket_dbt.my_second_dbt_model' was properly closed.
+[0m14:31:59.750973 [debug] [MainThread]: Connection 'model.ticket_dbt.fct_ticket_performance' was properly closed.
+[0m14:31:59.751135 [info ] [MainThread]: 
+[0m14:31:59.751357 [info ] [MainThread]: Finished running 1 table model, 3 view models in 0 hours 0 minutes and 0.22 seconds (0.22s).
+[0m14:31:59.751928 [debug] [MainThread]: Command end result
+[0m14:31:59.771286 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\neera\support_ticket_pipeline\ticket_dbt\target\manifest.json
+[0m14:31:59.773688 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\neera\support_ticket_pipeline\ticket_dbt\target\semantic_manifest.json
+[0m14:31:59.775590 [debug] [MainThread]: Wrote artifact OsiDocument to C:\Users\neera\support_ticket_pipeline\ticket_dbt\target\osi_document.json
+[0m14:31:59.780143 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\neera\support_ticket_pipeline\ticket_dbt\target\run_results.json
+[0m14:31:59.780369 [info ] [MainThread]: 
+[0m14:31:59.781042 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m14:31:59.781371 [info ] [MainThread]: 
+[0m14:31:59.781583 [info ] [MainThread]: Done. PASS=4 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=4
+[0m14:31:59.782059 [debug] [MainThread]: Command `dbt run` succeeded at 14:31:59.781997 after 1.66 seconds
+[0m14:31:59.782262 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000225D90EBF50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000225DB6B1FD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000225DD7BFD10>]}
+[0m14:31:59.782450 [debug] [MainThread]: Flushing usage events
+[0m14:32:00.583214 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:37:13.106461 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022107AB1E80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022105388B90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002210A4579D0>]}
+
+
+============================== 14:37:13.109287 | b825bddb-d5b9-415e-aebd-de1a6530985d ==============================
+[0m14:37:13.109287 [info ] [MainThread]: Running with dbt=1.12.2
+[0m14:37:13.110177 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'maximum_seed_size_mib': '1', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'empty': 'False', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\neera\\.dbt', 'use_colors': 'True', 'hints_enabled': 'True', 'invocation_command': 'dbt run', 'use_experimental_parser': 'False', 'indirect_selection': 'eager', 'log_path': 'C:\\Users\\neera\\support_ticket_pipeline\\ticket_dbt\\logs'}
+[0m14:37:13.246662 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'b825bddb-d5b9-415e-aebd-de1a6530985d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002210A3CFCE0>]}
+[0m14:37:13.283408 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'b825bddb-d5b9-415e-aebd-de1a6530985d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000221086A89E0>]}
+[0m14:37:13.285509 [info ] [MainThread]: Registered adapter: duckdb=1.11.0
+[0m14:37:13.430496 [debug] [MainThread]: checksum: dd9aa61aee54b22913ff250ff4e3f85772456e86671b597be3e7a6d61468f7b2, vars: {}, profile: ticket_dbt, target: dev, version: 1.12.2
+[0m14:37:13.510256 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m14:37:13.510735 [debug] [MainThread]: Partial parsing: updated file: ticket_dbt://models\stg_support_tickets.sql
+[0m14:37:13.673219 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'b825bddb-d5b9-415e-aebd-de1a6530985d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002210AED2050>]}
+[0m14:37:13.723329 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\neera\support_ticket_pipeline\ticket_dbt\target\manifest.json
+[0m14:37:13.727868 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\neera\support_ticket_pipeline\ticket_dbt\target\semantic_manifest.json
+[0m14:37:13.739229 [debug] [MainThread]: Wrote artifact OsiDocument to C:\Users\neera\support_ticket_pipeline\ticket_dbt\target\osi_document.json
+[0m14:37:13.745847 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'b825bddb-d5b9-415e-aebd-de1a6530985d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002210B08ED50>]}
+[0m14:37:13.746165 [info ] [MainThread]: Found 4 models, 4 data tests, 500 macros
+[0m14:37:13.746475 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'b825bddb-d5b9-415e-aebd-de1a6530985d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002210B0B2C10>]}
+[0m14:37:13.747910 [info ] [MainThread]: 
+[0m14:37:13.748196 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m14:37:13.748385 [info ] [MainThread]: 
+[0m14:37:13.748704 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m14:37:13.752297 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_ticket_analytics'
+[0m14:37:13.787869 [debug] [ThreadPool]: Using duckdb connection "list_ticket_analytics"
+[0m14:37:13.788232 [debug] [ThreadPool]: On list_ticket_analytics: /* {"app": "dbt", "dbt_version": "1.12.2", "profile_name": "ticket_dbt", "target_name": "dev", "connection_name": "list_ticket_analytics"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"ticket_analytics"'
+    
+  
+  
+[0m14:37:13.788471 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m14:37:13.801328 [debug] [ThreadPool]: SQL status: OK in 0.013 seconds
+[0m14:37:13.802327 [debug] [ThreadPool]: On list_ticket_analytics: Close
+[0m14:37:13.802949 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_ticket_analytics, now create_ticket_analytics_main)
+[0m14:37:13.803309 [debug] [ThreadPool]: Creating schema "database: "ticket_analytics"
+schema: "main"
+"
+[0m14:37:13.807653 [debug] [ThreadPool]: Using duckdb connection "create_ticket_analytics_main"
+[0m14:37:13.807845 [debug] [ThreadPool]: On create_ticket_analytics_main: /* {"app": "dbt", "dbt_version": "1.12.2", "profile_name": "ticket_dbt", "target_name": "dev", "connection_name": "create_ticket_analytics_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='ticket_analytics'
+        and type != 'duckdb'
+    
+  
+[0m14:37:13.807978 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m14:37:13.808742 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m14:37:13.809441 [debug] [ThreadPool]: Using duckdb connection "create_ticket_analytics_main"
+[0m14:37:13.809602 [debug] [ThreadPool]: On create_ticket_analytics_main: BEGIN
+[0m14:37:13.809872 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m14:37:13.810003 [debug] [ThreadPool]: Using duckdb connection "create_ticket_analytics_main"
+[0m14:37:13.810110 [debug] [ThreadPool]: On create_ticket_analytics_main: /* {"app": "dbt", "dbt_version": "1.12.2", "profile_name": "ticket_dbt", "target_name": "dev", "connection_name": "create_ticket_analytics_main"} */
+
+    
+    
+        create schema if not exists "ticket_analytics"."main"
+    
+[0m14:37:13.810389 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m14:37:13.810794 [debug] [ThreadPool]: On create_ticket_analytics_main: COMMIT
+[0m14:37:13.810924 [debug] [ThreadPool]: Using duckdb connection "create_ticket_analytics_main"
+[0m14:37:13.811030 [debug] [ThreadPool]: On create_ticket_analytics_main: COMMIT
+[0m14:37:13.811239 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m14:37:13.811398 [debug] [ThreadPool]: On create_ticket_analytics_main: Close
+[0m14:37:13.812500 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_ticket_analytics_main'
+[0m14:37:13.815210 [debug] [ThreadPool]: Using duckdb connection "list_ticket_analytics_main"
+[0m14:37:13.815383 [debug] [ThreadPool]: On list_ticket_analytics_main: BEGIN
+[0m14:37:13.815503 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m14:37:13.815779 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m14:37:13.815917 [debug] [ThreadPool]: Using duckdb connection "list_ticket_analytics_main"
+[0m14:37:13.816032 [debug] [ThreadPool]: On list_ticket_analytics_main: /* {"app": "dbt", "dbt_version": "1.12.2", "profile_name": "ticket_dbt", "target_name": "dev", "connection_name": "list_ticket_analytics_main"} */
+select
+      'ticket_analytics' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'ticket_analytics'
+  
+[0m14:37:13.819375 [debug] [ThreadPool]: SQL status: OK in 0.003 seconds
+[0m14:37:13.820163 [debug] [ThreadPool]: On list_ticket_analytics_main: ROLLBACK
+[0m14:37:13.820471 [debug] [ThreadPool]: On list_ticket_analytics_main: Close
+[0m14:37:13.821285 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'b825bddb-d5b9-415e-aebd-de1a6530985d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002210C286F70>]}
+[0m14:37:13.821621 [debug] [MainThread]: Using duckdb connection "master"
+[0m14:37:13.821755 [debug] [MainThread]: On master: BEGIN
+[0m14:37:13.821862 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m14:37:13.822142 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m14:37:13.822287 [debug] [MainThread]: On master: COMMIT
+[0m14:37:13.822396 [debug] [MainThread]: Using duckdb connection "master"
+[0m14:37:13.822493 [debug] [MainThread]: On master: COMMIT
+[0m14:37:13.822713 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m14:37:13.822846 [debug] [MainThread]: On master: Close
+[0m14:37:13.825219 [debug] [Thread-2 (]: Began running node model.ticket_dbt.stg_support_tickets
+[0m14:37:13.825469 [debug] [Thread-1 (]: Began running node model.ticket_dbt.my_first_dbt_model
+[0m14:37:13.825777 [info ] [Thread-2 (]: 2 of 4 START sql view model main.stg_support_tickets ........................... [RUN]
+[0m14:37:13.826427 [debug] [Thread-2 (]: Acquiring new duckdb connection 'model.ticket_dbt.stg_support_tickets'
+[0m14:37:13.826670 [debug] [Thread-2 (]: Began compiling node model.ticket_dbt.stg_support_tickets
+[0m14:37:13.830096 [debug] [Thread-2 (]: Writing injected SQL for node "model.ticket_dbt.stg_support_tickets"
+[0m14:37:13.826035 [info ] [Thread-1 (]: 1 of 4 START sql table model main.my_first_dbt_model ........................... [RUN]
+[0m14:37:13.830476 [debug] [Thread-1 (]: Acquiring new duckdb connection 'model.ticket_dbt.my_first_dbt_model'
+[0m14:37:13.830666 [debug] [Thread-1 (]: Began compiling node model.ticket_dbt.my_first_dbt_model
+[0m14:37:13.831823 [debug] [Thread-1 (]: Writing injected SQL for node "model.ticket_dbt.my_first_dbt_model"
+[0m14:37:13.832605 [debug] [Thread-2 (]: Began executing node model.ticket_dbt.stg_support_tickets
+[0m14:37:13.849848 [debug] [Thread-2 (]: Writing runtime sql for node "model.ticket_dbt.stg_support_tickets"
+[0m14:37:13.850434 [debug] [Thread-1 (]: Began executing node model.ticket_dbt.my_first_dbt_model
+[0m14:37:13.869259 [debug] [Thread-2 (]: Using duckdb connection "model.ticket_dbt.stg_support_tickets"
+[0m14:37:13.873603 [debug] [Thread-2 (]: On model.ticket_dbt.stg_support_tickets: BEGIN
+[0m14:37:13.874083 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m14:37:13.873225 [debug] [Thread-1 (]: Writing runtime sql for node "model.ticket_dbt.my_first_dbt_model"
+[0m14:37:13.875107 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m14:37:13.875731 [debug] [Thread-2 (]: Using duckdb connection "model.ticket_dbt.stg_support_tickets"
+[0m14:37:13.875920 [debug] [Thread-2 (]: On model.ticket_dbt.stg_support_tickets: /* {"app": "dbt", "dbt_version": "1.12.2", "profile_name": "ticket_dbt", "target_name": "dev", "node_id": "model.ticket_dbt.stg_support_tickets"} */
+
+  
+  create view "ticket_analytics"."main"."stg_support_tickets__dbt_tmp" as (
+    WITH raw_data AS (
+    SELECT * FROM read_csv_auto('C:/Users/neera/support_ticket_pipeline/raw_support_tickets.csv')
+)
+SELECT 
+    ticket_id,
+    customer_id,
+    account_tier,
+    CAST(created_at AS TIMESTAMP) AS created_at,
+    CAST(resolved_at AS TIMESTAMP) AS resolved_at,
+    ticket_subject,
+    customer_feedback
+FROM raw_data
+  );
+
+[0m14:37:13.876143 [debug] [Thread-1 (]: Using duckdb connection "model.ticket_dbt.my_first_dbt_model"
+[0m14:37:13.876510 [debug] [Thread-1 (]: On model.ticket_dbt.my_first_dbt_model: BEGIN
+[0m14:37:13.876659 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m14:37:13.876967 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m14:37:13.877127 [debug] [Thread-1 (]: Using duckdb connection "model.ticket_dbt.my_first_dbt_model"
+[0m14:37:13.877268 [debug] [Thread-1 (]: On model.ticket_dbt.my_first_dbt_model: /* {"app": "dbt", "dbt_version": "1.12.2", "profile_name": "ticket_dbt", "target_name": "dev", "node_id": "model.ticket_dbt.my_first_dbt_model"} */
+
+    
+
+    create  table
+      "ticket_analytics"."main"."my_first_dbt_model__dbt_tmp"
+  
+    
+    as (
+      /*
+    Welcome to your first dbt model!
+    Did you know that you can also configure models directly within SQL files?
+    This will override configurations stated in dbt_project.yml
+
+    Try changing "table" to "view" below
+*/
+
+
+
+with source_data as (
+
+    select 1 as id
+    union all
+    select null as id
+
+)
+
+select *
+from source_data
+
+/*
+    Uncomment the line below to remove records with null `id` values
+*/
+
+-- where id is not null
+    );
+    
+  
+[0m14:37:13.878056 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m14:37:13.881020 [debug] [Thread-1 (]: Using duckdb connection "model.ticket_dbt.my_first_dbt_model"
+[0m14:37:13.881223 [debug] [Thread-1 (]: On model.ticket_dbt.my_first_dbt_model: /* {"app": "dbt", "dbt_version": "1.12.2", "profile_name": "ticket_dbt", "target_name": "dev", "node_id": "model.ticket_dbt.my_first_dbt_model"} */
+
+    SELECT index_name
+    FROM duckdb_indexes()
+    WHERE database_name = 'ticket_analytics'
+      AND schema_name = 'main'
+      AND table_name = 'my_first_dbt_model'
+  
+[0m14:37:13.881835 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m14:37:13.885089 [debug] [Thread-1 (]: Using duckdb connection "model.ticket_dbt.my_first_dbt_model"
+[0m14:37:13.885303 [debug] [Thread-1 (]: On model.ticket_dbt.my_first_dbt_model: /* {"app": "dbt", "dbt_version": "1.12.2", "profile_name": "ticket_dbt", "target_name": "dev", "node_id": "model.ticket_dbt.my_first_dbt_model"} */
+alter table "ticket_analytics"."main"."my_first_dbt_model" rename to "my_first_dbt_model__dbt_backup"
+[0m14:37:13.885576 [debug] [Thread-2 (]: SQL status: OK in 0.009 seconds
+[0m14:37:13.887420 [debug] [Thread-2 (]: Using duckdb connection "model.ticket_dbt.stg_support_tickets"
+[0m14:37:13.887859 [debug] [Thread-2 (]: On model.ticket_dbt.stg_support_tickets: /* {"app": "dbt", "dbt_version": "1.12.2", "profile_name": "ticket_dbt", "target_name": "dev", "node_id": "model.ticket_dbt.stg_support_tickets"} */
+alter view "ticket_analytics"."main"."stg_support_tickets" rename to "stg_support_tickets__dbt_backup"
+[0m14:37:13.887629 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m14:37:13.889683 [debug] [Thread-1 (]: Using duckdb connection "model.ticket_dbt.my_first_dbt_model"
+[0m14:37:13.889919 [debug] [Thread-1 (]: On model.ticket_dbt.my_first_dbt_model: /* {"app": "dbt", "dbt_version": "1.12.2", "profile_name": "ticket_dbt", "target_name": "dev", "node_id": "model.ticket_dbt.my_first_dbt_model"} */
+alter table "ticket_analytics"."main"."my_first_dbt_model__dbt_tmp" rename to "my_first_dbt_model"
+[0m14:37:13.890161 [debug] [Thread-2 (]: SQL status: OK in 0.002 seconds
+[0m14:37:13.891484 [debug] [Thread-2 (]: Using duckdb connection "model.ticket_dbt.stg_support_tickets"
+[0m14:37:13.891660 [debug] [Thread-2 (]: On model.ticket_dbt.stg_support_tickets: /* {"app": "dbt", "dbt_version": "1.12.2", "profile_name": "ticket_dbt", "target_name": "dev", "node_id": "model.ticket_dbt.stg_support_tickets"} */
+alter view "ticket_analytics"."main"."stg_support_tickets__dbt_tmp" rename to "stg_support_tickets"
+[0m14:37:13.891844 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m14:37:13.901276 [debug] [Thread-1 (]: On model.ticket_dbt.my_first_dbt_model: COMMIT
+[0m14:37:13.901535 [debug] [Thread-1 (]: Using duckdb connection "model.ticket_dbt.my_first_dbt_model"
+[0m14:37:13.901713 [debug] [Thread-1 (]: On model.ticket_dbt.my_first_dbt_model: COMMIT
+[0m14:37:13.901912 [debug] [Thread-2 (]: SQL status: OK in 0.010 seconds
+[0m14:37:13.902887 [debug] [Thread-2 (]: On model.ticket_dbt.stg_support_tickets: COMMIT
+[0m14:37:13.903080 [debug] [Thread-2 (]: Using duckdb connection "model.ticket_dbt.stg_support_tickets"
+[0m14:37:13.903225 [debug] [Thread-2 (]: On model.ticket_dbt.stg_support_tickets: COMMIT
+[0m14:37:13.904291 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m14:37:13.909875 [debug] [Thread-1 (]: Using duckdb connection "model.ticket_dbt.my_first_dbt_model"
+[0m14:37:13.910140 [debug] [Thread-1 (]: On model.ticket_dbt.my_first_dbt_model: /* {"app": "dbt", "dbt_version": "1.12.2", "profile_name": "ticket_dbt", "target_name": "dev", "node_id": "model.ticket_dbt.my_first_dbt_model"} */
+
+      drop table if exists "ticket_analytics"."main"."my_first_dbt_model__dbt_backup" cascade
+    
+[0m14:37:13.910615 [debug] [Thread-2 (]: SQL status: OK in 0.007 seconds
+[0m14:37:13.911519 [debug] [Thread-2 (]: Using duckdb connection "model.ticket_dbt.stg_support_tickets"
+[0m14:37:13.911901 [debug] [Thread-2 (]: On model.ticket_dbt.stg_support_tickets: /* {"app": "dbt", "dbt_version": "1.12.2", "profile_name": "ticket_dbt", "target_name": "dev", "node_id": "model.ticket_dbt.stg_support_tickets"} */
+
+      drop view if exists "ticket_analytics"."main"."stg_support_tickets__dbt_backup" cascade
+    
+[0m14:37:13.911711 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m14:37:13.913329 [debug] [Thread-1 (]: On model.ticket_dbt.my_first_dbt_model: Close
+[0m14:37:13.914260 [debug] [Thread-2 (]: SQL status: OK in 0.002 seconds
+[0m14:37:13.914960 [debug] [Thread-2 (]: On model.ticket_dbt.stg_support_tickets: Close
+[0m14:37:13.915534 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b825bddb-d5b9-415e-aebd-de1a6530985d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002210B0BA690>]}
+[0m14:37:13.915741 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b825bddb-d5b9-415e-aebd-de1a6530985d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022107FDB5F0>]}
+[0m14:37:13.916129 [info ] [Thread-1 (]: 1 of 4 OK created sql table model main.my_first_dbt_model ...................... [[32mOK[0m in 0.08s]
+[0m14:37:13.916793 [debug] [Thread-1 (]: Finished running node model.ticket_dbt.my_first_dbt_model
+[0m14:37:13.916433 [info ] [Thread-2 (]: 2 of 4 OK created sql view model main.stg_support_tickets ...................... [[32mOK[0m in 0.09s]
+[0m14:37:13.917293 [debug] [Thread-2 (]: Finished running node model.ticket_dbt.stg_support_tickets
+[0m14:37:13.917639 [debug] [Thread-3 (]: Began running node model.ticket_dbt.my_second_dbt_model
+[0m14:37:13.918146 [debug] [Thread-4 (]: Began running node model.ticket_dbt.fct_ticket_performance
+[0m14:37:13.917978 [info ] [Thread-3 (]: 3 of 4 START sql view model main.my_second_dbt_model ........................... [RUN]
+[0m14:37:13.918767 [debug] [Thread-3 (]: Acquiring new duckdb connection 'model.ticket_dbt.my_second_dbt_model'
+[0m14:37:13.918931 [debug] [Thread-3 (]: Began compiling node model.ticket_dbt.my_second_dbt_model
+[0m14:37:13.920183 [debug] [Thread-3 (]: Writing injected SQL for node "model.ticket_dbt.my_second_dbt_model"
+[0m14:37:13.918440 [info ] [Thread-4 (]: 4 of 4 START sql view model main.fct_ticket_performance ........................ [RUN]
+[0m14:37:13.920560 [debug] [Thread-4 (]: Acquiring new duckdb connection 'model.ticket_dbt.fct_ticket_performance'
+[0m14:37:13.920772 [debug] [Thread-4 (]: Began compiling node model.ticket_dbt.fct_ticket_performance
+[0m14:37:13.922607 [debug] [Thread-4 (]: Writing injected SQL for node "model.ticket_dbt.fct_ticket_performance"
+[0m14:37:13.923005 [debug] [Thread-3 (]: Began executing node model.ticket_dbt.my_second_dbt_model
+[0m14:37:13.924385 [debug] [Thread-3 (]: Writing runtime sql for node "model.ticket_dbt.my_second_dbt_model"
+[0m14:37:13.924723 [debug] [Thread-4 (]: Began executing node model.ticket_dbt.fct_ticket_performance
+[0m14:37:13.926310 [debug] [Thread-4 (]: Writing runtime sql for node "model.ticket_dbt.fct_ticket_performance"
+[0m14:37:13.926602 [debug] [Thread-3 (]: Using duckdb connection "model.ticket_dbt.my_second_dbt_model"
+[0m14:37:13.927015 [debug] [Thread-3 (]: On model.ticket_dbt.my_second_dbt_model: BEGIN
+[0m14:37:13.927414 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m14:37:13.927745 [debug] [Thread-4 (]: Using duckdb connection "model.ticket_dbt.fct_ticket_performance"
+[0m14:37:13.928084 [debug] [Thread-4 (]: On model.ticket_dbt.fct_ticket_performance: BEGIN
+[0m14:37:13.928216 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m14:37:13.928446 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m14:37:13.928627 [debug] [Thread-3 (]: Using duckdb connection "model.ticket_dbt.my_second_dbt_model"
+[0m14:37:13.928952 [debug] [Thread-3 (]: On model.ticket_dbt.my_second_dbt_model: /* {"app": "dbt", "dbt_version": "1.12.2", "profile_name": "ticket_dbt", "target_name": "dev", "node_id": "model.ticket_dbt.my_second_dbt_model"} */
+
+  
+  create view "ticket_analytics"."main"."my_second_dbt_model__dbt_tmp" as (
+    -- Use the `ref` function to select from other models
+
+select *
+from "ticket_analytics"."main"."my_first_dbt_model"
+where id = 1
+  );
+
+[0m14:37:13.928783 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m14:37:13.929209 [debug] [Thread-4 (]: Using duckdb connection "model.ticket_dbt.fct_ticket_performance"
+[0m14:37:13.929354 [debug] [Thread-4 (]: On model.ticket_dbt.fct_ticket_performance: /* {"app": "dbt", "dbt_version": "1.12.2", "profile_name": "ticket_dbt", "target_name": "dev", "node_id": "model.ticket_dbt.fct_ticket_performance"} */
+
+  
+  create view "ticket_analytics"."main"."fct_ticket_performance__dbt_tmp" as (
+    WITH staging AS (
+    SELECT * FROM "ticket_analytics"."main"."stg_support_tickets"
+)
+SELECT 
+    ticket_id,
+    customer_id,
+    account_tier,
+    created_at,
+    resolved_at,
+    date_diff('hour', created_at, resolved_at) AS resolution_time_hours,
+    CASE 
+        WHEN date_diff('hour', created_at, resolved_at) > 24 THEN TRUE 
+        ELSE FALSE 
+    END AS is_sla_breached,
+    ticket_subject,
+    customer_feedback
+FROM staging
+  );
+
+[0m14:37:13.929615 [debug] [Thread-3 (]: SQL status: OK in 0.000 seconds
+[0m14:37:13.930734 [debug] [Thread-3 (]: Using duckdb connection "model.ticket_dbt.my_second_dbt_model"
+[0m14:37:13.930899 [debug] [Thread-3 (]: On model.ticket_dbt.my_second_dbt_model: /* {"app": "dbt", "dbt_version": "1.12.2", "profile_name": "ticket_dbt", "target_name": "dev", "node_id": "model.ticket_dbt.my_second_dbt_model"} */
+alter view "ticket_analytics"."main"."my_second_dbt_model" rename to "my_second_dbt_model__dbt_backup"
+[0m14:37:13.931253 [debug] [Thread-3 (]: SQL status: OK in 0.000 seconds
+[0m14:37:13.932223 [debug] [Thread-3 (]: Using duckdb connection "model.ticket_dbt.my_second_dbt_model"
+[0m14:37:13.932379 [debug] [Thread-3 (]: On model.ticket_dbt.my_second_dbt_model: /* {"app": "dbt", "dbt_version": "1.12.2", "profile_name": "ticket_dbt", "target_name": "dev", "node_id": "model.ticket_dbt.my_second_dbt_model"} */
+alter view "ticket_analytics"."main"."my_second_dbt_model__dbt_tmp" rename to "my_second_dbt_model"
+[0m14:37:13.932733 [debug] [Thread-3 (]: SQL status: OK in 0.000 seconds
+[0m14:37:13.933483 [debug] [Thread-3 (]: On model.ticket_dbt.my_second_dbt_model: COMMIT
+[0m14:37:13.933646 [debug] [Thread-3 (]: Using duckdb connection "model.ticket_dbt.my_second_dbt_model"
+[0m14:37:13.933775 [debug] [Thread-3 (]: On model.ticket_dbt.my_second_dbt_model: COMMIT
+[0m14:37:13.934649 [debug] [Thread-4 (]: SQL status: OK in 0.005 seconds
+[0m14:37:13.935923 [debug] [Thread-4 (]: Using duckdb connection "model.ticket_dbt.fct_ticket_performance"
+[0m14:37:13.936110 [debug] [Thread-4 (]: On model.ticket_dbt.fct_ticket_performance: /* {"app": "dbt", "dbt_version": "1.12.2", "profile_name": "ticket_dbt", "target_name": "dev", "node_id": "model.ticket_dbt.fct_ticket_performance"} */
+alter view "ticket_analytics"."main"."fct_ticket_performance" rename to "fct_ticket_performance__dbt_backup"
+[0m14:37:13.936454 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m14:37:13.937599 [debug] [Thread-3 (]: Using duckdb connection "model.ticket_dbt.my_second_dbt_model"
+[0m14:37:13.937770 [debug] [Thread-3 (]: On model.ticket_dbt.my_second_dbt_model: /* {"app": "dbt", "dbt_version": "1.12.2", "profile_name": "ticket_dbt", "target_name": "dev", "node_id": "model.ticket_dbt.my_second_dbt_model"} */
+
+      drop view if exists "ticket_analytics"."main"."my_second_dbt_model__dbt_backup" cascade
+    
+[0m14:37:13.936789 [debug] [Thread-4 (]: SQL status: OK in 0.000 seconds
+[0m14:37:13.938920 [debug] [Thread-4 (]: Using duckdb connection "model.ticket_dbt.fct_ticket_performance"
+[0m14:37:13.939095 [debug] [Thread-4 (]: On model.ticket_dbt.fct_ticket_performance: /* {"app": "dbt", "dbt_version": "1.12.2", "profile_name": "ticket_dbt", "target_name": "dev", "node_id": "model.ticket_dbt.fct_ticket_performance"} */
+alter view "ticket_analytics"."main"."fct_ticket_performance__dbt_tmp" rename to "fct_ticket_performance"
+[0m14:37:13.939477 [debug] [Thread-4 (]: SQL status: OK in 0.000 seconds
+[0m14:37:13.940254 [debug] [Thread-4 (]: On model.ticket_dbt.fct_ticket_performance: COMMIT
+[0m14:37:13.940684 [debug] [Thread-4 (]: Using duckdb connection "model.ticket_dbt.fct_ticket_performance"
+[0m14:37:13.940885 [debug] [Thread-4 (]: On model.ticket_dbt.fct_ticket_performance: COMMIT
+[0m14:37:13.940453 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m14:37:13.941599 [debug] [Thread-3 (]: On model.ticket_dbt.my_second_dbt_model: Close
+[0m14:37:13.942243 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b825bddb-d5b9-415e-aebd-de1a6530985d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002210C4B7D90>]}
+[0m14:37:13.942755 [debug] [Thread-4 (]: SQL status: OK in 0.002 seconds
+[0m14:37:13.943552 [debug] [Thread-4 (]: Using duckdb connection "model.ticket_dbt.fct_ticket_performance"
+[0m14:37:13.943718 [debug] [Thread-4 (]: On model.ticket_dbt.fct_ticket_performance: /* {"app": "dbt", "dbt_version": "1.12.2", "profile_name": "ticket_dbt", "target_name": "dev", "node_id": "model.ticket_dbt.fct_ticket_performance"} */
+
+      drop view if exists "ticket_analytics"."main"."fct_ticket_performance__dbt_backup" cascade
+    
+[0m14:37:13.942588 [info ] [Thread-3 (]: 3 of 4 OK created sql view model main.my_second_dbt_model ...................... [[32mOK[0m in 0.02s]
+[0m14:37:13.944025 [debug] [Thread-3 (]: Finished running node model.ticket_dbt.my_second_dbt_model
+[0m14:37:13.944745 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m14:37:13.945724 [debug] [Thread-4 (]: On model.ticket_dbt.fct_ticket_performance: Close
+[0m14:37:13.945998 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b825bddb-d5b9-415e-aebd-de1a6530985d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002210C3A6BD0>]}
+[0m14:37:13.946275 [info ] [Thread-4 (]: 4 of 4 OK created sql view model main.fct_ticket_performance ................... [[32mOK[0m in 0.03s]
+[0m14:37:13.946896 [debug] [Thread-4 (]: Finished running node model.ticket_dbt.fct_ticket_performance
+[0m14:37:13.948151 [debug] [MainThread]: Using duckdb connection "master"
+[0m14:37:13.948324 [debug] [MainThread]: On master: BEGIN
+[0m14:37:13.948442 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m14:37:13.948776 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m14:37:13.948914 [debug] [MainThread]: On master: COMMIT
+[0m14:37:13.949021 [debug] [MainThread]: Using duckdb connection "master"
+[0m14:37:13.949117 [debug] [MainThread]: On master: COMMIT
+[0m14:37:13.949330 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m14:37:13.949458 [debug] [MainThread]: On master: Close
+[0m14:37:13.949642 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m14:37:13.949752 [debug] [MainThread]: Connection 'create_ticket_analytics_main' was properly closed.
+[0m14:37:13.949843 [debug] [MainThread]: Connection 'list_ticket_analytics_main' was properly closed.
+[0m14:37:13.949929 [debug] [MainThread]: Connection 'model.ticket_dbt.stg_support_tickets' was properly closed.
+[0m14:37:13.950021 [debug] [MainThread]: Connection 'model.ticket_dbt.my_first_dbt_model' was properly closed.
+[0m14:37:13.950112 [debug] [MainThread]: Connection 'model.ticket_dbt.my_second_dbt_model' was properly closed.
+[0m14:37:13.950196 [debug] [MainThread]: Connection 'model.ticket_dbt.fct_ticket_performance' was properly closed.
+[0m14:37:13.950366 [info ] [MainThread]: 
+[0m14:37:13.950628 [info ] [MainThread]: Finished running 1 table model, 3 view models in 0 hours 0 minutes and 0.20 seconds (0.20s).
+[0m14:37:13.951474 [debug] [MainThread]: Command end result
+[0m14:37:13.970525 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\neera\support_ticket_pipeline\ticket_dbt\target\manifest.json
+[0m14:37:13.972829 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\neera\support_ticket_pipeline\ticket_dbt\target\semantic_manifest.json
+[0m14:37:13.974616 [debug] [MainThread]: Wrote artifact OsiDocument to C:\Users\neera\support_ticket_pipeline\ticket_dbt\target\osi_document.json
+[0m14:37:13.978998 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\neera\support_ticket_pipeline\ticket_dbt\target\run_results.json
+[0m14:37:13.979212 [info ] [MainThread]: 
+[0m14:37:13.979834 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m14:37:13.980586 [info ] [MainThread]: 
+[0m14:37:13.981106 [info ] [MainThread]: Done. PASS=4 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=4
+[0m14:37:13.982065 [debug] [MainThread]: Command `dbt run` succeeded at 14:37:13.981998 after 0.99 seconds
+[0m14:37:13.982274 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002210A482DD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002210193A120>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002210ADEFAD0>]}
+[0m14:37:13.982474 [debug] [MainThread]: Flushing usage events
+[0m14:37:14.656867 [debug] [MainThread]: An error was encountered while trying to flush usage events

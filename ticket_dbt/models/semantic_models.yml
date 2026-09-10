@@ -1,0 +1,44 @@
+version: 2
+
+semantic_models:
+  - name: fct_ticket_performance
+    description: "Customer support tickets fact table with operational metrics, account tiers, and SLA definitions."
+    model: ref('fct_ticket_performance')
+
+    entities:
+      - name: ticket
+        type: primary
+        expr: ticket_id
+      - name: customer
+        type: foreign
+        expr: customer_id
+
+    dimensions:
+      - name: created_at
+        type: time
+      - name: account_tier
+        type: categorical
+      - name: sentiment
+        type: categorical
+      - name: root_cause_category
+        type: categorical
+      - name: is_sla_breached
+        type: categorical
+
+    measures:
+      - name: total_tickets
+        agg: count
+        expr: ticket_id
+      - name: total_sla_breaches
+        agg: sum
+        expr: CASE WHEN is_sla_breached THEN 1 ELSE 0 END
+      - name: avg_resolution_hours
+        agg: avg
+        expr: resolution_time_hours
+
+metrics:
+  - name: sla_breach_rate
+    description: "Percentage of tickets breaching 24-hour SLA."
+    type: derived
+    type_params:
+      expr: (total_sla_breaches / total_tickets) * 100
